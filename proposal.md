@@ -4,7 +4,6 @@
 https://github.com/Nat-Huang/DrawingReferences.git
 
 ## Description
-1-2 sentence description of what it will do and how it relevant to media and digital arts.
 My program will generate a reference that an artist may need, including the human body (male and female), a few animals, objects, buildings, etc. They will also be able to request these images to be flipped, on the grayscale, and/or a jpg or png file.
 
 ## Features
@@ -25,10 +24,10 @@ My program will generate a reference that an artist may need, including the huma
 
 ## Outcomes
 Ideal Outcome:
-- Ideal outcome are the many possible references combinations someone could ask for
+- Ideal outcome are the many possible references combinations someone could ask for, including all motifications
 
 Minimal Viable Outcome:
-- Make sure to get all of the images imported so the person using the program would at least get the images they want to see. Have the option to adjust it the way they'd like too even if it isn't everything.
+- Make sure to get all of the images imported so the person using the program would at least get the images they want to see. 
 
 ## Milestones
 
