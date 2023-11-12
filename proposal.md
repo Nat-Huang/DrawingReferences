@@ -28,7 +28,7 @@ Ideal Outcome:
 - Ideal outcome are the many possible references combinations someone could ask for
 
 Minimal Viable Outcome:
-- Briefly describe the bare essential for a good working outcome?
+- Make sure to get all of the images imported so the person using the program would at least get the images they want to see. Have the option to adjust it the way they'd like too even if it isn't everything.
 
 ## Milestones
 
