@@ -8,7 +8,7 @@ def show_reference_image(category, gender=None):
     # Define a mapping between categories, gender, and image filenames
     image_mapping = {
         "human": {
-            "male":["male_reference.jpeg", "MaleSuit_Reference.jpeg"]
+            "male":["male_reference.jpeg", "MaleSuit_Reference.jpeg"],
             "female": ["Female_Reference.jpeg", "FemaleDress_Reference.jpeg"]
         },
         "animal": ["Cat_Reference.jpeg", "Cow_Reference.jpeg"],
@@ -18,24 +18,30 @@ def show_reference_image(category, gender=None):
 
     # Check if the specified category exists in the mapping
     if category in image_mapping:
-        if gender is None:
-            # If no specific gender is provided, choose a random one (if applicable)
-            if isinstance(image_mapping[category], dict):
-                gender = random.choice(["male", "female"])
-
-        # Check if the specified gender exists in the mapping
-        if gender in image_mapping[category]:
-            image_filename = image_mapping[category][gender]
-            image_path = os.path.join(image_folder, image_filename)
-
-            # Check if the image file exists
-            if os.path.exists(image_path):
-                reference_image = Image.open(image_path)
-                reference_image.show()
+        if isinstance(image_mapping[category], dict):
+            if gender is None:
+                # If no specific gender is provided, choose a random one
+                gender = random.choice(list(image_mapping[category].keys()))
+            
+            # Check if the specified gender exists in the mapping
+            if gender in image_mapping[category]:
+                image_filenames = image_mapping[category][gender]
             else:
-                print(f"No reference image found for {category} and {gender}")
+                print(f"No reference image available for gender: {gender} in the {category} category")
+                return
         else:
-            print(f"No reference image available for gender: {gender} in the {category} category")
+            image_filenames = image_mapping[category]
+
+        # Choose a random image filename for the specified category and gender
+        image_filename = random.choice(image_filenames)
+        image_path = os.path.join(image_folder, image_filename)
+
+        # Check if the image file exists
+        if os.path.exists(image_path):
+            reference_image = Image.open(image_path)
+            reference_image.show()
+        else:
+            print(f"No reference image found for {category}, {gender}, and {image_filename}")
     else:
         print(f"No reference image available for category: {category}")
 
@@ -43,9 +49,10 @@ def main():
     # Ask the user for input
     user_input_category = input("What do you need a reference for? Enter a specific category: ")
 
-    # If the category is "human," randomly choose a gender
+    # If the category is "human," ask for gender
     if user_input_category.lower() == "human":
-        show_reference_image(user_input_category)
+        user_input_gender = input("Enter gender (male/female), or press Enter for a random gender: ")
+        show_reference_image(user_input_category, user_input_gender)
     else:
         show_reference_image(user_input_category)
 
