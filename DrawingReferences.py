@@ -12,7 +12,7 @@ def show_reference_image(category, gender=None):
             "female": ["Female_Reference.jpeg", "FemaleDress_Reference.jpeg"]
         },
         "animal": ["Cat_Reference.jpeg", "Cow_Reference.jpeg", "Deer_Reference.jpeg", "Dog_Reference.jpeg", "Snake_Reference.jpeg"],
-        "object": ["Cheese Reference.jpeg", "Cup_Reference.jpeg"],
+        "object": ["Cheese Reference.jpeg", "Cup_Reference.jpeg", "Die_Reference.jpeg", "Flower_Reference.jpeg", "King_Reference.jpeg", "Knife_Reference.jpeg", "Pear_Reference.jpeg", "Pie_Reference.jpeg"],
         "place": ["China_Reference.jpeg", "CommunistApartment_Reference.jpeg"]
     }
 
