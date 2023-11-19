@@ -12,7 +12,7 @@ def show_reference_image(category, gender=None):
         },
         "animal": ["Cat_Reference.jpeg", "Cow_Reference.jpeg", "Deer_Reference.jpeg", "Dog_Reference.jpeg", "Snake_Reference.jpeg"],
         "object": ["Cheese Reference.jpeg", "Cup_Reference.jpeg", "Die_Reference.jpeg", "Flower_Reference.jpeg", "King_Reference.jpeg", "Knife_Reference.jpeg", "Pear_Reference.jpeg", "Pie_Reference.jpeg"],
-        "place": ["China_Reference.jpeg", "CommunistApartment_Reference.jpeg"]
+        "place": ["China_Reference.jpeg", "CommunistApartment_Reference.jpeg", "Desert_Reference.jpeg", "HouseFire_Reference.jpeg", "LOTR_Reference.jpeg", "Paris_Reference.jpeg", "Restraunt_Reference.jpeg", "Romania_Reference.jpeg"]
     }
 
     # Check if the specified category exists in the mapping
