@@ -5,7 +5,6 @@ import random
 def show_reference_image(category, gender=None):
     image_folder = "/Users/nataliehuang/Desktop/PFDA/DrawingReferences/images"
 
-    # Define a mapping between categories, gender, and image filenames
     image_mapping = {
         "human": {
             "male":["male_reference.jpeg", "MaleSuit_Reference.jpeg"],
