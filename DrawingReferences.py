@@ -2,7 +2,7 @@ from PIL import Image
 import os
 import random
 
-def show_reference_image(category, gender=None, flip=False, grayscale=False):
+def show_reference_image(category, gender=None, flip=False, grayscale=False, convert_to_png=False):
     image_folder = "/Users/nataliehuang/Desktop/PFDA/DrawingReferences/images"
 
     image_mapping = {
@@ -47,7 +47,14 @@ def show_reference_image(category, gender=None, flip=False, grayscale=False):
             if grayscale:
                 reference_image = reference_image.convert("L")
 
-            reference_image.show()
+            # Convert the image to PNG if requested
+            if convert_to_png:
+                png_filename = os.path.splitext(image_filename)[0] + ".png"
+                png_path = os.path.join(image_folder, png_filename)
+                reference_image.save(png_path, "PNG")
+                print(f"Reference image saved as {png_filename}")
+            else:
+                reference_image.show()
         else:
             print(f"No reference image found for {category}, {gender}, and {image_filename}")
     else:
@@ -69,8 +76,11 @@ def main():
     # Ask the user if they want to convert the image to grayscale
     grayscale_image = input("Do you want to convert the image to grayscale? (yes/no): ").lower() == 'yes'
 
+    # Ask the user if they want to convert the image to PNG
+    convert_to_png = input("Do you want to convert the image to PNG? (yes/no): ").lower() == 'yes'
+
     # Show the reference image based on the user's input
-    show_reference_image(user_input_category, user_input_gender, flip_image, grayscale_image)
+    show_reference_image(user_input_category, user_input_gender, flip_image, grayscale_image, convert_to_png)
 
 if __name__ == "__main__":
     main()
