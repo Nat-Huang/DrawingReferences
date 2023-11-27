@@ -2,12 +2,12 @@ from PIL import Image
 import os
 import random
 
-def show_reference_image(category, gender=None):
+def show_reference_image(category, gender=None, flip=False):
     image_folder = "/Users/nataliehuang/Desktop/PFDA/DrawingReferences/images"
 
     image_mapping = {
         "human": {
-            "male":["male_reference.jpeg", "MaleSuit_Reference.jpeg"],
+            "male": ["male_reference.jpeg", "MaleSuit_Reference.jpeg"],
             "female": ["Female_Reference.jpeg", "FemaleDress_Reference.jpeg"]
         },
         "animal": ["Cat_Reference.jpeg", "Cow_Reference.jpeg", "Deer_Reference.jpeg", "Dog_Reference.jpeg", "Snake_Reference.jpeg"],
@@ -38,6 +38,11 @@ def show_reference_image(category, gender=None):
         # Check if the image file exists
         if os.path.exists(image_path):
             reference_image = Image.open(image_path)
+
+            # Flip the image horizontally if requested
+            if flip:
+                reference_image = reference_image.transpose(Image.FLIP_LEFT_RIGHT)
+
             reference_image.show()
         else:
             print(f"No reference image found for {category}, {gender}, and {image_filename}")
@@ -51,9 +56,14 @@ def main():
     # If the category is "human," ask for gender
     if user_input_category.lower() == "human":
         user_input_gender = input("Enter gender (male/female), or press Enter for a random gender: ")
-        show_reference_image(user_input_category, user_input_gender)
     else:
-        show_reference_image(user_input_category)
+        user_input_gender = None
+
+    # Ask the user if they want to flip the image horizontally
+    flip_image = input("Do you want to flip the image horizontally? (yes/no): ").lower() == 'yes'
+
+    # Show the reference image based on the user's input
+    show_reference_image(user_input_category, user_input_gender, flip_image)
 
 if __name__ == "__main__":
     main()
