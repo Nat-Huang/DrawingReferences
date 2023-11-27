@@ -46,7 +46,7 @@ def show_reference_image(category, gender=None):
 
 def main():
     # Ask the user for input
-    user_input_category = input("What do you need a reference for? human, animal, object, or place?")
+    user_input_category = input("What do you need a reference for? human, animal, object, or place? ")
 
     # If the category is "human," ask for gender
     if user_input_category.lower() == "human":
