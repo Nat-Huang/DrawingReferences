@@ -7,6 +7,9 @@ https://github.com/Nat-Huang/DrawingReferences.git
 ## Description
 My program will generate a reference that an artist may need, including the human body (male and female), a few animals, objects, buildings, etc. They will also be able to request these images to be flipped, on the grayscale, and/or a jpg or png file.
 
+## Demonstration Video
+https://youtu.be/xeDouXszB00
+
 ## Features
 - Provide a total of 10-15 images with an option to randomnize
 	- Import pillow, random, and image
